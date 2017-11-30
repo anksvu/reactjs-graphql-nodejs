@@ -5,8 +5,15 @@ const bodyParser = require('body-parser')
 const gse = require('graphql-server-express')
 const schema = require('./schema')
 require('dotenv').config()
+const mongoose = require('mongoose')
 
 
+// mongodb
+mongoose.Promise = global.Promise
+mongoose.connect(process.env.MONGODB_URL,
+  {useMongoClient: true})
+
+// graphql
 app.use('/graphql', bodyParser.json(),
   gse.graphqlExpress(
     req => ({

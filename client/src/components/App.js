@@ -1,12 +1,30 @@
 import React from 'react'
 import { gql, graphql } from 'react-apollo'
 
-const myQuery = gql`{ hello }`
 
 class App extends React.Component {
   render() {
-    return <h1>{this.props.data.hello}</h1>
+    const {data: {loading, error, students}} = this.props
+    if (loading) {
+      return <div>Loading</div>
+    }
+    else if (error) {
+      return <div>{error}</div>
+    }
+    else {
+      return students.map((student, i) =>
+        <li key={i}>{student.name}</li>)
+    }
   }
 }
 
-export default graphql(myQuery)(App)
+const studentsQuery = gql`{
+  students {
+    name
+    phone
+    class
+    email
+  }
+}`
+
+export default graphql(studentsQuery)(App)

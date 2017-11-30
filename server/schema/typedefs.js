@@ -1,6 +1,21 @@
 const typedefs = `
+  type Student {
+    name      : String,
+    class     : String,
+    phone     : Int,
+    email     : String
+  },
+  input StudentInput {
+    name      : String,
+    class     : String,
+    phone     : Int,
+    email     : String
+  },
   type Query {
-    hello    : String!
+    students : [Student]
+  }
+  type Mutation {
+    addStudent(student: StudentInput): Student
   }
 `
 
