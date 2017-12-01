@@ -12,10 +12,13 @@ const typedefs = `
     email     : String
   },
   type Query {
-    students : [Student]
+    students: [Student]
   }
   type Mutation {
     addStudent(student: StudentInput): Student
+  }
+  type Subscription {
+    student: Student
   }
 `
 
