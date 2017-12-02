@@ -1,30 +1,31 @@
-# reactjs-graphql-nodejs
+## reactjs-graphql-nodejs
 
-# Install dependencies
+## Install dependencies
 <p>npm install</p>
 
-# Production
+## Production
 <p>npm run build</p>
 <p>npm start</p>
 <p>open browser and go to http://localhost:3000</p>
 
-# Development
-## start dev server
+## Development
+### start dev server
 <p>npm run dev-server</p>
-## start dev client
+
+### start dev client
 <p>npm run dev-client</p>
 
-# GrapgiQL
+## GrapgiQL
 <p>open browser and go to http://localhost:3000/graphiql</p>
 
-## Mutation : add student
+### Mutation : add student
 mutation addStudent($student: StudentInput) {
   addStudent(student: $student) {
     name
   }
 }
 
-## variable
+#### variable
 {
   "student": {
     "name": "name",
@@ -34,7 +35,7 @@ mutation addStudent($student: StudentInput) {
   }
 }
 
-## Query: list students
+### Query: list students
 query{
   students {
     name
@@ -44,7 +45,7 @@ query{
   }
 }
 
-## Subscription: listen for add students
+### Subscription: listen for add students
 subscription{
   student {
     name
