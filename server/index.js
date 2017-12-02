@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URL,
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(
-  path.resolve(__dirname, '../client', 'build')))
+  path.resolve(__dirname, '../', 'build')))
 }
 else {
   app.use(cors())

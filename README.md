@@ -1,26 +1,55 @@
 # reactjs-graphql-nodejs
 
-# Development
-
-## start server
-<p>cd server</p>
+# Install dependencies
 <p>npm install</p>
-<p>npm start</p>
-
-## start client
-<p>cd client</p>
-<p>npm install</p>
-<p>npm start</p>
 
 # Production
-## start server
-<p>cd client</p>
-<p>npm install</p>
 <p>npm run build</p>
-
-<p>cd server</p>
-<p>update .env file with NODE_ENV=production
 <p>npm start</p>
+<p>open browser and go to http://localhost:3000</p>
 
-<p>open browser and go to https://localhost:3000</p>
+# Development
+## start dev server
+<p>npm run dev-server</p>
+## start dev client
+<p>npm run dev-client</p>
 
+# GrapgiQL
+<p>open browser and go to http://localhost:3000/graphiql</p>
+
+## Mutation : add student
+mutation addStudent($student: StudentInput) {
+  addStudent(student: $student) {
+    name
+  }
+}
+
+## variable
+{
+  "student": {
+    "name": "name",
+    "email": "test@email.com",
+    "phone": "479332973",
+    "class": "I"
+  }
+}
+
+## Query: list students
+query{
+  students {
+    name
+    class
+    phone
+    email
+  }
+}
+
+## Subscription: listen for add students
+subscription{
+  student {
+    name
+    class
+    phone
+    email
+  }
+}
